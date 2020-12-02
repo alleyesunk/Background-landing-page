@@ -1,0 +1,168 @@
+/* 全局变量 */
+*{                                                  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+section{
+    position: relative; 
+    min-height: 100vh;
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;   
+}
+
+section .container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background:#fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    overflow: hidden; 
+}
+/* flex布局 右边显示登录 */
+section .container .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/* 过度动画 */
+section .container .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s; 
+}
+/* 防止图片变形 */
+section .container .user .imgBx .img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* formBx 设置过度动画并居中 */
+section .container .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 50px;
+    transition: 0.5s;
+}
+/* 设置 标签 内容字符大写 字符间距  */
+section .container .user .formBx form h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+/*输入框大小 去除边框 设置字体间距大小 输入框之间的间距*/
+section .container .user .formBx form input{
+
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+/*定义登录按钮 背景颜色 鼠标移动变手 字体间距 过度动画*/
+section .container .user .formBx form input[type="submit"]{
+    max-width: 100px;
+    background: #677eff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+/*上边距 字体大小 字体间距 字体颜色 字符大写 字体宽度*/
+section .container .user .formBx form .singup{
+
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:#555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+/*超链接 去除下划线 字体加粗 字体颜色*/
+section .container .user .formBx form .singup a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #677eff;
+}
+/*去除鼠标事件*/
+section .container .singupBx{
+    pointer-events: none;
+}
+/*恢复鼠标事件*/
+section .container.active .singupBx{
+    pointer-events: auto;
+}
+
+section .container .singupBx .formBx{
+    left: 100%;
+}
+
+section .container.active .singupBx .formBx{
+    left: 0;
+}
+
+section .container .singupBx .imgBx{
+    left: -100%;
+}
+
+section .container.active .singupBx .imgBx{
+    left: 0;
+}
+
+section .container .singinBx .formBx{
+    left: 0;
+}
+
+section .container.active .singinBx .formBx{
+    left: 100%;
+}
+
+section .container .singinBx .imgBx{
+    left: 0;
+}
+
+section .container.active .singinBx .imgBx{
+    left: -100%;
+}
+/*设置最大宽度 */
+@media(max-width:990px){
+    section .container{
+        max-width: 400px;
+    }
+    section .container .imgBx{
+        display: none;
+    }
+    section .container .user .formBx{
+        width: 100%;
+    }
+} 
